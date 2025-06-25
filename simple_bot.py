@@ -1,19 +1,13 @@
 import logging
-from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 
-BOT_TOKEN = "7225094617:AAHY3aLYmIiwLZKcGXx9em3ULK7eviko1NU"
+from bot.config import BOT_TOKEN
+from bot.handlers import start, echo
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO
+    level=logging.INFO,
 )
-
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("Hello! I'm a simple bot. Send me any text and I'll echo it back.")
-
-async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text(update.message.text)
 
 def main() -> None:
     app = ApplicationBuilder().token(BOT_TOKEN).build()

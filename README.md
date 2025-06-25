@@ -4,7 +4,9 @@ This repository contains a minimal example of a Telegram bot written in Python u
 
 ## Files
 
-- `simple_bot.py` – a simple echo bot that replies to any text message.
+- `simple_bot.py` – entry point for running the bot.
+- `bot/config.py` – configuration such as the bot token.
+- `bot/handlers.py` – handler functions for incoming messages.
 
 ## Usage
 
@@ -17,4 +19,4 @@ This repository contains a minimal example of a Telegram bot written in Python u
    python simple_bot.py
    ```
 
-Before running, make sure to set your bot token in `simple_bot.py`.
+Before running, make sure to set your bot token in `bot/config.py`.
